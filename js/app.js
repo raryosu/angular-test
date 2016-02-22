@@ -35,7 +35,6 @@ app.controller('EntriesListCtrl', ['$scope', 'EntriesFactory', function($scope, 
 				$scope.items = $scope.items.concat(entries);
 				$scope.initialized = false;
 			}, function(v){
-				// resolved
 			}, function(v){
 				alert(v);
 			});
