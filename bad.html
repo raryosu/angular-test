@@ -14,11 +14,11 @@
 	<h1>もっと見るやつのテスト</h1>
 	<div ng-controller="EntriesListCtrl" ng-init="init({page: 1})" ng-cloak>
 		<ol>
-			<li ng-repeat="item in items">
+			<li ng-repeat="item in items | limitTo: 15">
 				<a href="{{item.url}}">{{item.title}}</a> by {{item.user.id}}
 			</li>
 		</ol>
-		<a href ng-click="page=page+1">Readmore</a>
+		<a href ng-click="page=page+1">Readmosre</a>
 	</div>
 </body>
 </html>
