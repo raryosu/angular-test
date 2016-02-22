@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>テスト</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-animate.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-cookies.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-resource.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-route.min.js"></script>
+	<script src="js/app.js"></script>
+</head>
+<body ng-app="QiitaApp">
+いぇい
+	<div ng-controller="EntriesListCtrl" ng-init="init({page: 1})" ng-cloak>
+		<ul>
+			<li ng-repeat="item in items">
+				<a href="{{item.url}}">{{item.title}}</a> by {{item.user.id}}
+			</li>
+		</ul>
+		<a href ng-click="page=page+1">Readmore</a>
+	</div>
+</body>
+</html>
