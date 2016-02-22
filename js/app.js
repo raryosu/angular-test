@@ -32,11 +32,7 @@ app.controller('EntriesListCtrl', ['$scope', 'EntriesFactory', function($scope, 
 			}
 			$scope.params = angular.extend($scope.params, args.params);
 			EntriesFactory().query($scope.params).$promise.then(function(entries) {
-				angular.forEach(entries, function(value, key) {
-					$scope.items.push(value);
-				});
-
-				// $scope.items = $scope.items.concat($scope.items);
+				$scope.items = $scope.items.concat(entries);
 				$scope.initialized = false;
 			}, function(v){
 				// resolved
@@ -53,7 +49,7 @@ app.controller('EntriesListCtrl', ['$scope', 'EntriesFactory', function($scope, 
 
 app.factory('EntriesFactory', ['$resource', function($resource) {
 	return function(args) {
-		args = angular.extend({timeout: 0, cache: true, type: null}, args);
+		args = angular.extend({timeout: 0, cache: true}, args);
 		var api = 'http://qiita.com/api/v2/items';
 		return $resource(api, {}, {
 			query: {
